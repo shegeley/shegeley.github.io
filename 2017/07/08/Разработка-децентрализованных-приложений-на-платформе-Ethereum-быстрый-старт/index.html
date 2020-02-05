@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang=ru>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="— Учиться и время от времени повторять изученное, разве это не приятно? Встретить друга, прибывшего издалека, разве это не радостно? Человек остается в неизвестности и не испытывает обиды, разве это">
+<meta name="keywords" content="Ethereum">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1">
+<meta property="og:url" content="http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/index.html">
+<meta property="og:site_name" content="Григорий Михайлович Шепелев">
+<meta property="og:description" content="— Учиться и время от времени повторять изученное, разве это не приятно? Встретить друга, прибывшего издалека, разве это не радостно? Человек остается в неизвестности и не испытывает обиды, разве это">
+<meta property="og:locale" content="ru">
+<meta property="og:image" content="http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/Remix1.png">
+<meta property="og:updated_time" content="2019-07-26T16:04:00.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1">
+<meta name="twitter:description" content="— Учиться и время от времени повторять изученное, разве это не приятно? Встретить друга, прибывшего издалека, разве это не радостно? Человек остается в неизвестности и не испытывает обиды, разве это">
+<meta name="twitter:image" content="http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/Remix1.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg">
+          
+        
+    
+    <!-- title -->
+    <title>Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+    
+        <meta name="yandex-verification" content="5fb2945c31b5fe6f">
+    
+    
+        <meta name="google-site-verification" content="EV_t_DkNxHQMzp8Kcr-ov88_zp1IwI70qR5LxsptBok">
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Главная</a></li>
+         
+          <li><a href="/archives/">Записи</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/07/16/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт-2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/06/04/HTTPS-Wordpress-behind-Apache-proxy/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Предыдущая запись</span>
+      <span id="i-next" class="info" style="display:none;">Следующая запись</span>
+      <span id="i-top" class="info" style="display:none;">В начало</span>
+      <span id="i-share" class="info" style="display:none;">Поделиться</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&text=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&is_video=false&description=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1&body=Check out this article: http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&name=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Дисклеймер"><span class="toc-number">1.</span> <span class="toc-text">Дисклеймер</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Введение"><span class="toc-number">2.</span> <span class="toc-text">Введение</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Основные-термины"><span class="toc-number">3.</span> <span class="toc-text">Основные термины</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Работа-с-клиентом"><span class="toc-number">4.</span> <span class="toc-text">Работа с клиентом</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Обзор-консоли-geth"><span class="toc-number">5.</span> <span class="toc-text">Обзор консоли geth</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Начало-разработки"><span class="toc-number">6.</span> <span class="toc-text">Начало разработки</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Контракт-Hello-world"><span class="toc-number">6.0.1.</span> <span class="toc-text">Контракт: Hello world</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Работа-с-контрактами-в-geth"><span class="toc-number">6.1.</span> <span class="toc-text">Работа с контрактами в geth</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Деплой-контракта-в-geth"><span class="toc-number">6.1.1.</span> <span class="toc-text">Деплой контракта в geth</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Как-соединить-два-клиента-geth-с-одинаковым-genesis’ом"><span class="toc-number">6.1.2.</span> <span class="toc-text">Как соединить два клиента geth с одинаковым genesis’ом?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Следующий-контракт-примитивный-чат"><span class="toc-number">6.1.3.</span> <span class="toc-text">Следующий контракт: примитивный чат</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Продолжение-следует"><span class="toc-number">6.2.</span> <span class="toc-text">Продолжение следует</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Кошелек-Mist"><span class="toc-number">7.</span> <span class="toc-text">Кошелек Mist</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Тестирование"><span class="toc-number">8.</span> <span class="toc-text">Тестирование</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Что-дальше"><span class="toc-number">9.</span> <span class="toc-text">Что дальше</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Где-купить-Ethereum"><span class="toc-number">10.</span> <span class="toc-text">Где купить Ethereum?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ссылки-по-теме"><span class="toc-number">11.</span> <span class="toc-text">Ссылки по теме</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Григорий Михайлович Шепелев</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2017-07-07T21:00:00.000Z" itemprop="datePublished">08.07.2017</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Ethereum/">Ethereum</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>— Учиться и время от времени повторять изученное, разве это не приятно? Встретить друга, прибывшего издалека, разве это не радостно? Человек остается в неизвестности и не испытывает обиды, разве это не благородный муж?</p>
+</blockquote>
+<h2 id="Дисклеймер"><a href="#Дисклеймер" class="headerlink" title="Дисклеймер"></a>Дисклеймер</h2><p>Я никак коммерчески не заинтересован в успехе данной платформы, не являюсь одним из ее разработчиков, ничего не продаю; на фоне хайпа вокруг криптовалют напоминаю, что только ты несешь ответственность за любые действия, совершенные с личными финансами.<br>Некоторые экономисты сравнивают криптовалюты с летящимими самолетами, непригодными для ремонта в воздухе.</p>
+<p>Это руководство близко к практике: код, примеры.<br>Я не буду погружаться и доказывать работоспособность криптографических алгоритмов, которые лежат в основе блокчейна и Ethereum в этой записи.</p>
+<h2 id="Введение"><a href="#Введение" class="headerlink" title="Введение"></a>Введение</h2><p>Криптовалюты всегда привлекали меня; долго откладывал эту тему. Около 4 месяцев назад наткнулся на информацию о платформе Etherium, возможности которой привели меня в восторг: <em>умные контракты</em>.  </p>
+<p>Погружение началось с официальной документации, которая была (и сейчас находится) в ужасном состоянии, платформа развивается настолько быстро, что дока не успевает за ней: то и дело в примерах встречаются удаленные методы, а самое главное: нет объяснения о том как работает эта сложная штука с нуля.  </p>
+<p>Кульминацией моего погружения в эту тему стало <a href="https://vk.com/kurskmeetup?w=wall-88308983_678" target="_blank" rel="noopener">выступление на курском митапе разработчиков</a> в апреле этого года. </p>
+<h2 id="Основные-термины"><a href="#Основные-термины" class="headerlink" title="Основные термины"></a>Основные термины</h2><p>Что такое умные контракты? Компьютерные протоколы, позволяющие заключать, подтверждать, проверять достоверность контрактов.<br>Что такое Etherium? С одной стороны это топливо для распределенной вычислительной платформы для заключения умных контрактов, с другой стороны это криптовалюта, его можно хранить, передавать и майнить. Майнингом эфириума обеспечивается работоспособность платформы.<br>Есть ли ограничние по максимальному количеству Ефириума в сети? Нет прямого ограничения, сеть регулирует свою сложность и вероятность майнинга со временем, количеством участников. </p>
+<p>Ключевые концепции эфириума: </p>
+<ul>
+<li>Аккаунт (Кошелек). Пользователь может иметь несколько кошельков, как и в концепции биткоина они защищены приватными и публичными ключами. После создания кошелька он занимает свое место в блокчейне и у него появляется адрес. Замечу, что аккануты в Eth могу быть не только у пользователей, но и у умных контрактов. Контракты (упрощенно) можно рассматривать как ботов для крупных платформ, как и у пользователей у них есть свой юзернейм (адрес аккаунта), по которому с ними можно общаться.</li>
+<li>Блок - (как и в Биткоине) ‘контейнер для транзакций’, сгруппированных по одному признаку (обычно timestamp)</li>
+<li>Транзакция - конечная операция передачи данных в сети. Собираются в блоки</li>
+<li>Газ (Gas) - ‘пошлина’ на транзакции, плата за нагрузку на сеть, есть и в биткоине: чтобы послать определенное количество битков, нужно доплатить немного ‘сверху’</li>
+</ul>
+<p>Как Эфириум позволяет создавать и управлять “умными контрактами”? Умные контракты - суть код, они исполняются в EVM (Etherium Virtual Machine) - программируемом блокчейне. Если в биткоине у пользователей есть заранее определенные транзакции, которые можно производить, здесь их можно определять самому.<br>EVM - полная по Тьюрингу, писать контракты можно на языках Solidity (почти Javascript), Serpent (почти Python), lll (почти Lisp). Код на этих языках компилируется, код контракта вставляется в блокчейн, у него появляется свой адрес.  </p>
+<h2 id="Работа-с-клиентом"><a href="#Работа-с-клиентом" class="headerlink" title="Работа с клиентом"></a>Работа с клиентом</h2><p>Как начать пользоваться Etherium? Для Etherium есть несколько клиентов, официальный и самый популярный - Geth, написан на Go. Инструкции по установке доступны <a href="https://ethereum.github.io/go-ethereum/install/" target="_blank" rel="noopener">здесь</a>.  </p>
+<p>Чтобы запустить его, после установки, в консоли пиши: <code>geth</code>.<br>Он присоединится к доступным пирам в сети и начнет скачивать историю транзакций, которая сейчас занимает около 16GB, в директорию <code>~/./geth/chaindata</code>. Начать взаимодействовать с ним станет можно после синхронизации. </p>
+<p>Но geth так же позволяет создать собственную сеть, вместо присоеднинения к глобальной, что полезно для разработки и знакомства с методами. Для этого нужно создать файл genesis.json, в котором будут прописаны настройки сети. Вот пример, который я нашел в одном блоге:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"nonce"</span>: <span class="string">"0x00000000000000043"</span>,</span><br><span class="line">		<span class="attr">"timestamp"</span>: <span class="string">"0x00"</span>,</span><br><span class="line">		<span class="attr">"parentHash"</span>:<span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">		<span class="attr">"extraData"</span>: <span class="string">"0x00"</span>,</span><br><span class="line">		<span class="attr">"gasLimit"</span>: <span class="string">"0x800000"</span>,</span><br><span class="line">		<span class="attr">"difficulty"</span>: <span class="string">"0x4000"</span>,</span><br><span class="line">		<span class="attr">"mixhash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">		<span class="attr">"coinbase"</span>: <span class="string">"0x3333333333333333333333333333333333333333"</span>,		 </span><br><span class="line">		<span class="attr">"alloc"</span>: &#123;&#125;,	</span><br><span class="line">		<span class="attr">"config"</span>: &#123;</span><br><span class="line">			<span class="attr">"chainId"</span>: <span class="number">123456789</span>,</span><br><span class="line">			<span class="attr">"homesteadBlock"</span>: <span class="number">0</span>,</span><br><span class="line">			<span class="attr">"eip155Block"</span>: <span class="number">0</span>,</span><br><span class="line">			<span class="attr">"eip158Block"</span>: <span class="number">0</span></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Краткое объяснение: </p>
+<ul>
+<li><code>difficulty</code> - сложность сети</li>
+<li><code>nonce</code> - еще одна характеристика, определяющая сложность сети, существует в биткоине. Не буду останавливаться на этом, почитать больше можно <a href="https://en.bitcoin.it/wiki/Nonce" target="_blank" rel="noopener">здесь</a></li>
+<li><code>coinbase</code> - адрес аккаунта, куда по-умолчанию будут перечислены вымайненые Эфиры</li>
+<li><code>gasLimit</code> - максимальная стоимость Газа на блок</li>
+</ul>
+<p>Перед тем, как запускать инициализацию genesis’a создай рабочую директорию для него - <strong>eth-dev</strong>: <code>cd ~; mkdir eth-dev</code>.<br>После создания файла в консоли пиши: <code>geth --datadir eth-dev init genesis.json</code>. Инициализация завершена. </p>
+<p>Можно запускать: <code>geth --networkid 666 --datadir eth-dev --port 3000 --rpcport 8000 --nodiscover --nat &quot;any&quot; console</code></p>
+<p>Обзор флагов: </p>
+<ul>
+<li><code>networkid</code> - id сети, по-умолчанию id главной сети - 1, но т.к. используется кастомный genesis он не позволит к ней присоединиться, можно писать что угодно.</li>
+<li><code>datadir</code> - директория в которой будет инициализированы данные geth</li>
+<li><code>port</code> - порт, для соединения с сетью</li>
+<li><code>rpcport</code> - да, geth поддерживает RPC</li>
+<li><code>nodiscover</code> - отключает <code>discover</code> - поиск пиров для синхронизации, прописывать мы их будем вручную. </li>
+<li><code>console</code> - открыть консоль</li>
+</ul>
+<p>Для <code>geth</code> важен порядок аргументов. <code>console</code> пиши последним.</p>
+<h2 id="Обзор-консоли-geth"><a href="#Обзор-консоли-geth" class="headerlink" title="Обзор консоли geth"></a>Обзор консоли geth</h2><p>После запуска будет выведено что-то в этом духе:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">instance: Geth/v1.6.6-stable-10a45cb5/linux-amd64/go1.8.1</span><br><span class="line">coinbase: 0x6397801bfee0a65402ba3b461c03f757ef1c07d2</span><br><span class="line">at block: 38 (Wed, 03 May 2017 09:54:56 MSK)</span><br><span class="line">datadir: /home/altjsus/ETH/eth-dev</span><br><span class="line">modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0</span><br></pre></td></tr></table></figure></p>
+<p>У консоли есть модули <code>modules</code>.<br>Краткий обзор: </p>
+<ul>
+<li><code>admin</code> - модуль для администрирования, запускает/останавливает RPC, WS-RPC, добавлять/удалять пиры, импортировать/экспортировать чейн. </li>
+<li><code>eth</code> - важный функционал, связанный с платформой. Подписать, получить все аккаунты, транзакции, код контракта, подписать тразакцию, подсчитать стоимость газа и тд.</li>
+<li><code>personal</code> - управление своими аккаунтами</li>
+<li><code>net</code> - информация о сети</li>
+<li><code>txpool</code> - пул транзакций. Транзакции, которые еще не ‘вымайнились’, не получили места в блокчейне</li>
+<li><code>web3</code> - Web3 - это javascript API к Ethereum’у. Включает все перечисленные модули.</li>
+</ul>
+<p>Для начала создай новый аккаунт:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ac = personal.createAccount();</span><br></pre></td></tr></table></figure></p>
+<p>Потребуется ввести <em>passphrase</em>; можно оставить пустым.<br>Установи аккаунт по-умолчанию:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eth.defaultAccount = ac;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Начало-разработки"><a href="#Начало-разработки" class="headerlink" title="Начало разработки"></a>Начало разработки</h2><p>Приступая к написанию кода: можно писать в вашем любимом текстовом редакторе/IDE либо в <a href="https://ethereum.github.io/browser-solidity/" target="_blank" rel="noopener">официальной среде Remix</a> прямо в браузере. Я буду использовать последний вариант, писать на Solidity. </p>
+<h4 id="Контракт-Hello-world"><a href="#Контракт-Hello-world" class="headerlink" title="Контракт: Hello world"></a>Контракт: Hello world</h4><p>Простейший пример: “Hello World”. Название файла: <code>Hello.sol</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0; </span><br><span class="line">contract HelloWorld&#123;</span><br><span class="line">	function hello() constant returns (string)&#123;</span><br><span class="line">		return &quot;Hello world&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Первой строчкой указывается версия solidity.<br><code>constant</code> здесь означает, что функция никак не изменяет, ничего не пишет в блокчейн. <code>returns</code> - что она возвращает <strong>string</strong>.<br>У контрактов нет никакой ‘точки входа’, как <strong>main</strong> во многих языках.<br>Скомпилить его в EVM байт-код можно прямо в браузере. Взаимодействие с контрактом в Remix сильно ограничено</p>
+<h3 id="Работа-с-контрактами-в-geth"><a href="#Работа-с-контрактами-в-geth" class="headerlink" title="Работа с контрактами в geth"></a>Работа с контрактами в geth</h3><p>На этом этапе могут возникнуть проблемы: я говорил Eth развивается слишком быстро, что негативно влияет на стабильность.</p>
+<p>Как деплоить контракт в Eth:</p>
+<ul>
+<li>через компилятор Solidity (языка по выбору), для этого его нужно установить: <code>npm install -g solc</code> </li>
+<li>через web3 (чистый js)<br>Советую деплоить через Web3.</li>
+</ul>
+<p><img src="Remix1.png" alt>  </p>
+<p>Внизу справа строчка ‘Contract details’, интересует вкладка ‘Web3 deploy’. Ниже будут машинные инструкции для EVM, если интересно - взгляни на них.</p>
+<p>Сначала разблокируй свой аккаунт, по-умолчанию он находится в блокированном состоянии: безопасность.<br><code>personal.unlockAccount(eth.defaultAccount);</code></p>
+<p><em>Пора майнить!</em> Для того, чтобы оплатить нагрузку на сеть придется поработать. В тестовой сети с чистым genesis-файлом майнинг происходит быстро: <code>miner.start()</code>.<br>Подожди 15-20 секунд, пиши <code>miner.stop()</code>. Процесс не останавливается SIGINT Ctrl+C.<br>Проверяй баланс: <code>eth.getBalance(ac)</code>. </p>
+<p>После чего обрати внимание на названия переменных в окне ‘Web3 deploy’ в браузере:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> browser_hello_sol_helloworldContract = web3.eth.contract([&#123;<span class="string">"constant"</span>:<span class="literal">true</span>,<span class="string">"inputs"</span>:[],<span class="string">"name"</span>:<span class="string">"hello"</span>,<span class="string">"outputs"</span>:[&#123;<span class="string">"name"</span>:<span class="string">""</span>,<span class="string">"type"</span>:<span class="string">"string"</span>&#125;],<span class="string">"payable"</span>:<span class="literal">false</span>,<span class="string">"type"</span>:<span class="string">"function"</span>&#125;]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> browser_hello_sol_helloworld = browser_hello_sol_helloworldContract.new(&#123;</span><br><span class="line"><span class="keyword">from</span>: web3.eth.accounts[<span class="number">0</span>], </span><br><span class="line">data: <span class="string">'</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="string">'</span>, </span><br><span class="line">gas: <span class="string">'4700000'</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e, contract</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<p>Объяснение: контракт (<code>browser...Contract</code>) - это как класс в объектно-ориентированном программировании, у которого могут быть свои объекты (инстансы) - то, где он (его байткод) вставляется в блокчейн, что происходит при вызове <code>.new()</code> или <code>.at()</code><br>В Эфириуме <code>web3.eth.contract()</code> по сути - ABI (Aplication Binary Interface) контракта. </p>
+<h4 id="Деплой-контракта-в-geth"><a href="#Деплой-контракта-в-geth" class="headerlink" title="Деплой контракта в geth"></a>Деплой контракта в geth</h4><p>Перехожу к деплою: копипасть вывод из ‘web3 deploy’ в консоль <code>geth</code>.<br>Сделано? Отлично, если ввести в <code>browser_hello_sol_helloworld</code>, вывод будет примерно такой:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; browser_hello_sol_helloworld</span><br><span class="line">&#123;</span><br><span class="line">abi: [&#123;</span><br><span class="line">			constant: true,</span><br><span class="line">			inputs: [],</span><br><span class="line">			name: &quot;hello&quot;,</span><br><span class="line">			outputs: [&#123;...&#125;],</span><br><span class="line">			payable: false,</span><br><span class="line">			type: &quot;function&quot;</span><br><span class="line">	&#125;],</span><br><span class="line">address: undefined,</span><br><span class="line">transactionHash: &quot;0xc2157d2d41a48571e616225c1d9b7270fe1b01f8fa2e9f217188205cfe098413&quot; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>address: undefined</code> - значит контракт еще не занял свое место в блокчейне, для этого его нужно ‘вымайнить’, сейчас он ‘висит’ в пуле транзакций. <code>txpool</code> выглядит так:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt; txpool</span><br><span class="line">&#123;</span><br><span class="line">  content: &#123;</span><br><span class="line">    pending: &#123;</span><br><span class="line">      0x6397801bfee0a65402ba3b461c03f757ef1c07d2: &#123;</span><br><span class="line">        0: &#123;...&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    queued: &#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  inspect: &#123;</span><br><span class="line">    pending: &#123;</span><br><span class="line">      0x6397801bfee0a65402ba3b461c03f757ef1c07d2: &#123;</span><br><span class="line">        0: &quot;contract creation: 0 wei + 4700000 × 20000000000 gas&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    queued: &#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  status: &#123;</span><br><span class="line">    pending: 1,</span><br><span class="line">    queued: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Запускай <code>miner.start()</code>, жди 10-15 секунд, <code>miner.stop()</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; browser_hello_sol_helloworld</span><br><span class="line">&#123;</span><br><span class="line">  abi: [&#123;</span><br><span class="line">      constant: true,</span><br><span class="line">      inputs: [],</span><br><span class="line">      name: &quot;hello&quot;,</span><br><span class="line">      outputs: [&#123;...&#125;],</span><br><span class="line">      payable: false,</span><br><span class="line">      type: &quot;function&quot;</span><br><span class="line">  &#125;],</span><br><span class="line">  address: &quot;0x1d09394b74ac214f4059852f1f97c13e6d77547f&quot;,</span><br><span class="line">  transactionHash: &quot;0xc2157d2d41a48571e616225c1d9b7270fe1b01f8fa2e9f217188205cfe098413&quot;,</span><br><span class="line">  allEvents: function(),</span><br><span class="line">  hello: function()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>У контракта появился адрес! Теперь с ним могу взаимодействовать я и другие участники сети.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; browser_hello_sol_helloworld.hello()</span><br><span class="line">&quot;Hello world&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Заметь, что при получении информации о транзакции которая вставила этот контракт в блокчейн (transactionHash):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; eth.getTransaction(&quot;0x1d..&quot;)</span><br><span class="line">&#123;</span><br><span class="line">  blockHash: &quot;0x90e8d81075a9766b19721e7809a99a7391c4629b92f78aa3861f265db2749a30&quot;,</span><br><span class="line">  blockNumber: 113,</span><br><span class="line">  from: &quot;0xbd0212a4e65c46bd7536cc8ba38a83bafb2801ef&quot;,</span><br><span class="line">  gas: 4700000,</span><br><span class="line">  gasPrice: 20000000000,</span><br><span class="line">  hash: &quot;0x95ab45297531235b66fce05c07bef084a0b70d88bb21021af657d9d1b23dfca5&quot;,</span><br><span class="line">  input: &quot;0x6060604052341561000c57fe5b5b6101598061001c6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319ff1d211461003b575bfe5b341561004357fe5b61004b6100d4565b604051808060200182810382528381815181526020019150805190602001908083836000831461009a575b80518252602083111561009a57602082019150602081019050602083039250610076565b505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100dc610119565b604060405190810160405280600b81526020017f48656c6c6f20776f726c6400000000000000000000000000000000000000000081525090505b90565b6020604051908101604052806000815250905600a165627a7a72305820b6a58b0bb0bdf6847d5a2ed6c0aff4abd39a7bc785559960cbc467c4492f97f80029&quot;,</span><br><span class="line">  nonce: 2,</span><br><span class="line">  r: &quot;0xf7b81828f929f800b3526a83a21796a9ef201a46c0c1f7af38dd65fd5689a108&quot;,</span><br><span class="line">  s: &quot;0x6a59f087677020132063632fd41471e54d6911cd261029d7c2292984036c1952&quot;,</span><br><span class="line">  to: null,</span><br><span class="line">  transactionIndex: 0,</span><br><span class="line">  v: &quot;0x75bcd186&quot;,</span><br><span class="line">  value: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>В поле <strong>from:</strong> будет твой аккаунт, а в поле <strong>input</strong> - байт-код контракта. </p>
+<p>Создам другой процесс geth в другом терминале, чтобы симулировать второго пользователя.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~; mkdir eth-dev2;</span><br><span class="line">geth --datadir eth-dev2 init genesis.json;</span><br><span class="line">geth --networkid 666 --datadir eth-dev2 --port 3001 --rpcport 8001 --nodiscover --nat &quot;any&quot; console;</span><br></pre></td></tr></table></figure></p>
+<p>Создание аккаунта уже описывал.</p>
+<h4 id="Как-соединить-два-клиента-geth-с-одинаковым-genesis’ом"><a href="#Как-соединить-два-клиента-geth-с-одинаковым-genesis’ом" class="headerlink" title="Как соединить два клиента geth с одинаковым genesis’ом?"></a>Как соединить два клиента geth с одинаковым genesis’ом?</h4><p>В первом клиенте нужно получить id узла:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; admin.nodeInfo.enode</span><br><span class="line">&quot;enode://b5759e8c5169cf5a7ceacc9f1677db74ffc1de4d83c3de46f72ba50167908b35e3521bf7b6be72c977a5cc1dab9c46961c75198e914d90fb1ecf46610d00aa6f@[::]:3000?discport=0&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Копируй его в другом клиенте пиши:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin.addPeer(&quot;enode://b5759e8c5169cf5a7ceacc9f1677db74ffc1de4d83c3de46f72ba50167908b35e3521bf7b6be72c977a5cc1dab9c46961c75198e914d90fb1ecf46610d00aa6f@[::]:3000?discport=0&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>Т. к. в предидущем клиенте происходил майнинг, второму клиенту потребуется немного времени (10-15 секунд), чтобы синхронизировать блокчейн.<br>Проверка: в обоих клиентах пиши<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; net</span><br></pre></td></tr></table></figure></p>
+<p>Вывод должен быть:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  listening: true,</span><br><span class="line">  peerCount: 1,</span><br><span class="line">  version: &quot;666&quot;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Готово!  </p>
+<p>Как вызвать контракт из второго клиента? Вызвать код контракта не получится без ABI. Копируй его из первого клиента, форматируй его в одну строку (можно <a href="http://javascriptcompressor.com/" target="_blank" rel="noopener">здесь</a>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; var hello = eth.contract([&#123;constant:true,inputs:[],name:&quot;hello&quot;,outputs:[&#123;name:&quot;&quot;,type:&quot;string&quot;&#125;],payable:false,type:&quot;function&quot;&#125;]).at(&quot;0x1d...&quot;)</span><br><span class="line">&gt; hello.hello()</span><br><span class="line">&quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="Следующий-контракт-примитивный-чат"><a href="#Следующий-контракт-примитивный-чат" class="headerlink" title="Следующий контракт: примитивный чат"></a>Следующий контракт: примитивный чат</h4><p>Простейший чат на Solidity.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0;</span><br><span class="line"></span><br><span class="line">// altjsus@gmail.com</span><br><span class="line"></span><br><span class="line">contract Chat &#123;</span><br><span class="line">    </span><br><span class="line">    struct Msg&#123;</span><br><span class="line">        string content;</span><br><span class="line">        // строка - контент сообщения</span><br><span class="line">        address sender;</span><br><span class="line">        // адрес отправителя</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    uint msgs_number; </span><br><span class="line">    // сообщений в системе всего</span><br><span class="line">    mapping (uint =&gt; Msg) Msgs; </span><br><span class="line">     </span><br><span class="line">    event msg_sended(string content);</span><br><span class="line">    // event - событие, на них можно вешать колбэки  </span><br><span class="line">    </span><br><span class="line">    function send_msg(string content) &#123;</span><br><span class="line">        msgs_number++;</span><br><span class="line">        msg_sended(content);</span><br><span class="line">        Msgs[msgs_number] = Msg(content, msg.sender);</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Перед деплоем необходимо установить coinbase т.е. аккаунт, который будет взаимодействовать с контрактом: с него спишут Газ, переведут средства, если контракт предусматривает что-либо подобное в себе.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; eth.defaultAccount=eth.coinbase</span><br></pre></td></tr></table></figure></p>
+<p>Далее: разблокировка аккаунта, деплой через Web3, майнинг.<br>Взаимойдествие с контрактом.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; browser_chat_sol_chat.send_msg(&quot;Hello!&quot;)`</span><br></pre></td></tr></table></figure></p>
+<p>Скопируй хэш транзакции, сейчас будем инспектировать. Запускай/останавливай майнер на 10-15 секунд.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; var hello_transaction = eth.getTransaction(&quot;0x...&quot;)</span><br><span class="line">&gt; console.log(hello_transaction)</span><br><span class="line">&gt; console.log(web3.toAscii(hello_transaction.input))</span><br><span class="line">&quot;Hello!&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Славно.</p>
+<h3 id="Продолжение-следует"><a href="#Продолжение-следует" class="headerlink" title="Продолжение следует"></a>Продолжение следует</h3><p>Новые, более сложные контракты добавлю во второй части поста, выход которой вы можете ускорить пожертвованиями на мой аккаунт <a href="http://paypal.me/altjsus" target="_blank" rel="noopener">PayPal</a> или на кошелек Эфириума: 0x77ac73a0ce7a70ea42fd568b3b59165ea47d2b76<br>Пишите о личных экспериментах с Эфиром, задавайте вопросы.</p>
+<hr>
+<h2 id="Кошелек-Mist"><a href="#Кошелек-Mist" class="headerlink" title="Кошелек Mist"></a>Кошелек Mist</h2><p>Для тех, кто не любит командную строку, а предпочитает красивые GUI: официальный кошелек <a href="https://github.com/ethereum/mist/releases" target="_blank" rel="noopener">Mist</a>.</p>
+<h2 id="Тестирование"><a href="#Тестирование" class="headerlink" title="Тестирование"></a>Тестирование</h2><p>При разработке нагруженных контрактов важна надежность, нужно писать тесты.<br>Для тестирования контрактов есть несколько фреймворков. Самые популярные: <a href="https://github.com/trufflesuite/truffle" target="_blank" rel="noopener">Truffle</a>, <a href="https://github.com/iurimatias/embark-framework" target="_blank" rel="noopener">Embark</a>.  </p>
+<h2 id="Что-дальше"><a href="#Что-дальше" class="headerlink" title="Что дальше"></a>Что дальше</h2><p>Вопрос, который задают большинство людей мне, после рассказа про Eth: что дальше, как его использовать.<br>Отвечаю: как хотите. В ваших руках невероятная мощь распределённой базы данных, защищенной от подделок, javascript API к ней и возможность вызова процедур по RPC. КАК УГОДНО, КАРЛ! </p>
+<p>В поиске вдохновения поможет проект <a href="https://dapps.ethercasts.com/" target="_blank" rel="noopener">State of Dapps</a>.<br>На Эфириуме пилят много проектов, связанных с азартными играми (контракты как казино, обалдеть), вот <a href="https://etheroll.com/" target="_blank" rel="noopener">пример</a>.<br>Хочу отметить проекты: <a href="https://lunyr.com/" target="_blank" rel="noopener">Lynur</a> - децентрализованная википедия с системой наград, <a href="https://decentraland.org/" target="_blank" rel="noopener">Decentraland</a> - попытка связать блокчейн и виртуальную реальность (не знаю что это, но выглядит прикольно), <a href="Etherezation">http://www.bspend.com/etherization</a> - RPG игруля, в Эфире.</p>
+<h2 id="Где-купить-Ethereum"><a href="#Где-купить-Ethereum" class="headerlink" title="Где купить Ethereum?"></a>Где купить Ethereum?</h2><p>В России купить Эфир за рубли по карте можно на сервисах: <a href="https://24paybank.com/" target="_blank" rel="noopener">24paybank</a>, <a href="https://www.alfacashier.com/ru" target="_blank" rel="noopener">Alfacashier</a>.<br>Заканчивается быстро, проценты невероятные, анонимности никакой, плюс обязательно отправить фото кредитной карты.</p>
+<h2 id="Ссылки-по-теме"><a href="#Ссылки-по-теме" class="headerlink" title="Ссылки по теме"></a>Ссылки по теме</h2><ul>
+<li><a href="https://ethereum.stackexchange.com/questions/2376/what-does-each-genesis-json-parameter-mean" target="_blank" rel="noopener">Структура genesis файла</a></li>
+<li><a href="https://ethereum.github.io/yellowpaper/paper.pdf" target="_blank" rel="noopener">Yellow paper</a></li>
+<li><a href="https://ethereum.org" target="_blank" rel="noopener">Официальный вебсайт проекта</a></li>
+<li><a href="https://ethereumprice.org/" target="_blank" rel="noopener">График цены на Эфир</a></li>
+<li><a href="http://ethdocs.org/" target="_blank" rel="noopener">EthDocs</a></li>
+<li><a href="https://github.com/ethereum/" target="_blank" rel="noopener">Ethereum на Github</a></li>
+<li><a href="http://solidity.readthedocs.io/" target="_blank" rel="noopener">Документация по Solidity</a></li>
+<li><a href="https://media.consensys.net/" target="_blank" rel="noopener">Consensys</a></li>
+<li><a href="https://dapps.ethercasts.com/" target="_blank" rel="noopener">State of Dapps</a></li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Включите JavaScript, чтобы читать комментарии.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Главная</a></li>
+         
+          <li><a href="/archives/">Записи</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Дисклеймер"><span class="toc-number">1.</span> <span class="toc-text">Дисклеймер</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Введение"><span class="toc-number">2.</span> <span class="toc-text">Введение</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Основные-термины"><span class="toc-number">3.</span> <span class="toc-text">Основные термины</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Работа-с-клиентом"><span class="toc-number">4.</span> <span class="toc-text">Работа с клиентом</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Обзор-консоли-geth"><span class="toc-number">5.</span> <span class="toc-text">Обзор консоли geth</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Начало-разработки"><span class="toc-number">6.</span> <span class="toc-text">Начало разработки</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Контракт-Hello-world"><span class="toc-number">6.0.1.</span> <span class="toc-text">Контракт: Hello world</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Работа-с-контрактами-в-geth"><span class="toc-number">6.1.</span> <span class="toc-text">Работа с контрактами в geth</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Деплой-контракта-в-geth"><span class="toc-number">6.1.1.</span> <span class="toc-text">Деплой контракта в geth</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Как-соединить-два-клиента-geth-с-одинаковым-genesis’ом"><span class="toc-number">6.1.2.</span> <span class="toc-text">Как соединить два клиента geth с одинаковым genesis’ом?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Следующий-контракт-примитивный-чат"><span class="toc-number">6.1.3.</span> <span class="toc-text">Следующий контракт: примитивный чат</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Продолжение-следует"><span class="toc-number">6.2.</span> <span class="toc-text">Продолжение следует</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Кошелек-Mist"><span class="toc-number">7.</span> <span class="toc-text">Кошелек Mist</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Тестирование"><span class="toc-number">8.</span> <span class="toc-text">Тестирование</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Что-дальше"><span class="toc-number">9.</span> <span class="toc-text">Что дальше</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Где-купить-Ethereum"><span class="toc-number">10.</span> <span class="toc-text">Где купить Ethereum?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ссылки-по-теме"><span class="toc-number">11.</span> <span class="toc-text">Ссылки по теме</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&text=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&is_video=false&description=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1&body=Check out this article: http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&title=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://altjsus.github.io/2017/07/08/Разработка-децентрализованных-приложений-на-платформе-Ethereum-быстрый-старт/&name=Разработка децентрализованных приложений на платформе Ethereum: быстрый старт | Часть 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Меню</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> Оглавление</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Поделиться</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> В начало</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+<div class="footer-left">
+     
+     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    
+
+    </div>
+    <div style = "display: inline-block;">
+    <!-- Refferals place -->
+    </div>
+    <div class="footer-right">
+        <nav>
+            <ul>
+                
+                    <li><a href="/">Главная</a></li>
+                    
+                    <li><a href="/archives/">Записи</a></li>
+                    
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-157836653-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Yandex Metrika -->
+
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym('52897882', "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/52897882" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'altjsus';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
